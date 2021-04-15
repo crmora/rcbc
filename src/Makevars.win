@@ -1,5 +1,11 @@
-PKG_CPPFLAGS = -I../windows/cbc-2.9.8/include/coin
-PKG_LIBS = -L../windows/cbc-2.9.8/lib${subst gcc,,${COMPILED_BY}}${R_ARCH} \
+VERSION = 2.10.5
+RWINLIB = ../windows/cbc-$(VERSION)
+BUILD = ${subst gcc ,-,${R_COMPILED_BY}}
+
+PKG_CPPFLAGS = -I$(RWINLIB)/include/coin
+
+PKG_LIBS = -L$(RWINLIB)/lib$(BUILD)$(R_ARCH) \
+  -L$(RWINLIB)/lib$(R_ARCH) \
 	-lCbcSolver -lClpSolver \
 	-lOsiCbc -lCbc -lCgl -lOsiClp -lClp -lOsi -lCoinUtils -lz -lm
 

@@ -4,3 +4,8 @@
 .Ruserdata
 src/Makevars
 windows
+.directory
+doc
+Meta
+.github/depends.rds
+.github/R-version
